@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Магазин</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/home.css') }}">
+        <link rel="shortcut icon" href="/static/images/shop_icon.png" />
+    </head>
+    <body>
+        <div class="topnav">
+            <img src="/static/images/shop_icon.png" style="width: 50px; height: 47px;">
+            <a class="active" href="{{ url_for('shop')}}">Начальная страница</a>
+            <a href="{{ url_for('about')}}">О нас</a>
+          </div>
+          <div style="display: inline-block;">
+              {% for i in items %}
+              <div class="product-item">
+                <div class="product-list">
+                  <img src="{{ i.img }}">
+                  <h3>{{ i.name }}</h3>
+                    <span class="price">₽ {{ i.price }}</span>
+                    <a href="" class="button">В корзину</a>
+                </div>
+              </div>
+              {% endfor %}
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+    </body>
+</html>
